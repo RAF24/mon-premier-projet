@@ -3,11 +3,11 @@ export class AuthService {
     isAuth = false;
 
 
-    signIn(){
+    signIn() {
         return new Promise(
-            (resolve, reject) =>{
+            (resolve, reject) => {
                 setTimeout(
-                    () =>{
+                    () => {
                         this.isAuth = true;
                         resolve(true);
                     }, 2000
@@ -17,8 +17,7 @@ export class AuthService {
     }
 
 
-    signOut(){
+    signOut() {
         this.isAuth = false;
     }
-
 }

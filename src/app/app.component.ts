@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { resolve, reject } from 'q';
-import { AppareilService } from './services/appareil.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,10 +8,7 @@ import { AppareilService } from './services/appareil.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private appareilService : AppareilService){
-  }
+  constructor() {}
 
-  ngOnInit(){
-   
-  }
+  ngOnInit() {}
 }

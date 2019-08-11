@@ -9,22 +9,22 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
 
-  authStatus : boolean;
+  authStatus: boolean;
 
-  constructor(private authService : AuthService, private router : Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.authStatus = this.authService.isAuth;
   }
 
-  
+
   /**
    * Méthode de connexion
    */
-  onSignIn(){
+  onSignIn() {
     this.authService.signIn().then(
       () => {
-        console.log("Sign is successful !");
+        console.log('Sign is successful !');
         this.authStatus = this.authService.isAuth;
         this.router.navigate(['appareils']);
       }
@@ -35,9 +35,9 @@ export class AuthComponent implements OnInit {
   /**
    * Deconnexion
    */
-  onSignOut(){
+  onSignOut() {
     this.authService.signOut();
-    console.log("SignOut is successful !");
+    console.log('SignOut is successful !');
     this.authStatus = this.authService.isAuth;
   }
 

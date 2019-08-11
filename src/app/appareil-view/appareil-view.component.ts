@@ -10,7 +10,7 @@ export class AppareilViewComponent implements OnInit {
 
   isAuth = false;
 
-  appareils : any[];
+  appareils: any[];
 
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
@@ -20,9 +20,9 @@ export class AppareilViewComponent implements OnInit {
       }, 2000);
 });
 
-  constructor(private appareilService : AppareilService) { 
+  constructor(private appareilService: AppareilService) {
     setTimeout(
-      () =>{
+      () => {
         this.isAuth = true;
       }, 4000
     );
@@ -33,16 +33,16 @@ export class AppareilViewComponent implements OnInit {
   }
 
 
-//allumer tout
+// allumer tout
 onAllumer() {
   this.appareilService.switchOnAll();
 }
 
-//éteindre tout
+// éteindre tout
 onEteindre() {
-if(confirm('Etes-vous sûr de vouloir éteindre tous vos appareils ?')){
+if (confirm('Etes-vous sûr de vouloir éteindre tous vos appareils ?')) {
   this.appareilService.switchOffAll();
-}else {
+} else {
   return null;
 }
 }
