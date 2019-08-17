@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,14 +16,16 @@ import { AuthGuardService } from './services/auth.guard.service';
 import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserService } from './services/user.service';
+import { NewUserComponent } from './new-user/new-user.component';
 
 
 const appRoutes: Routes = [
   {path: 'appareils', canActivate: [AuthGuardService], component: AppareilViewComponent},
   {path: 'appareils/:id', canActivate: [AuthGuardService], component : SingleAppareilComponent},
   {path: 'edit', canActivate: [AuthGuardService], component: EditAppareilComponent},
-  {path: 'users', canActivate: [AuthGuardService], component: UserListComponent},
+  {path: 'users', component: UserListComponent},
   {path: 'auth', component: AuthComponent},
+  {path: 'new-user', component: NewUserComponent},
   {path: '', component: AppareilViewComponent},
   {path: 'not-found', component : FourOhFourComponent},
   {path: '**', redirectTo : 'not-found'}
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     SingleAppareilComponent,
     FourOhFourComponent,
     EditAppareilComponent,
-    UserListComponent
+    UserListComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,

@@ -11,9 +11,7 @@ import { UserService } from '../services/user.service';
 })
 export class UserListComponent implements OnInit, OnDestroy {
 
-  users: User[] = [
-    new User('Rafiou', 'Diallo', 'rafiou@diallo.com', 'jeu d\'orange', ['coder', 'lire', 'voyager'])
-  ];
+  users: User[] = [];
 
   userSubscription = new Subscription();
 
